@@ -1,33 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WhoWhatWhyAI - Explore the World of AI</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
-  <style>
-    .button {
-      display: block;
-      margin: 0 auto;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .button:hover {
-      background-color: #0062cc;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the WhoWhatWhy in the world of AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #b19cd9;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #9a7ecc;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans min-h-screen">
-  <div class="text-center">
-    <h1 class="text-5xl font-bold mb-8">WhoWhatWhyAI</h1>
-    <p class="text-2xl mb-12">Ready to explore the WhoWhatWhy in the world of AI?</p>
-    <a href="explore.html" class="button">Start Exploring</a>
-  </div>
+<body>
+    <div class="container">
+        <h1>Explore the<br>WhoWhatWhy<br>in the world of AI</h1>
+        <button class="button" onclick="goToRandomResource()">Let's go!</button>
+    </div>
+
+    <script>
+        function goToRandomResource() {
+            const resources = [
+                'https://example.com/resource1',
+                'https://example.com/resource2',
+                'https://example.com/resource3',
+                'https://example.com/resource4',
+                'https://example.com/resource5'
+            ];
+            const randomResource = resources[Math.floor(Math.random() * resources.length)];
+            window.location.href = randomResource;
+        }
+    </script>
 </body>
 </html>
