@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resource</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .resource {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .button {
+            background-color: #b19cd9;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #9a7ecc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Resource</h1>
+        <div id="resource" class="resource"></div>
+        <button class="button" onclick="loadNewResource()">Explore More</button>
+    </div>
 
+    <script>
+        const resources = [
+            { name: "ChatGPT", url: "https://chat.openai.com/" },
+            { name: "Google Bard", url: "https://bard.google.com/" },
+            { name: "Midjourney", url: "https://www.midjourney.com/" },
+            { name: "DALL-E", url: "https://openai.com/dall-e-2" },
+            { name: "Hugging Face", url: "https://huggingface.co/" }
+        ];
+
+        function loadNewResource() {
+            const randomResource = resources[Math.floor(Math.random() * resources.length)];
+            const resourceElement = document.getElementById("resource");
+            resourceElement.innerHTML = `<a href="${randomResource.url}" target="_blank">${randomResource.name}</a>`;
+        }
+
+        // Load a resource when the page loads
+        window.onload = loadNewResource;
+    </script>
+</body>
+</html>
