@@ -30,8 +30,14 @@
         .resource {
             font-size: 1.5em;
             margin-bottom: 30px;
+            max-width: 600px;
         }
-        .button {
+        .resource p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .button, .resource-link {
             background-color: #b19cd9;
             border: none;
             color: white;
@@ -45,7 +51,7 @@
             border-radius: 50px;
             transition: background-color 0.3s;
         }
-        .button:hover {
+        .button:hover, .resource-link:hover {
             background-color: #9a7ecc;
         }
         .footer {
@@ -77,17 +83,23 @@
 
     <script>
         const resources = [
-            { name: "ChatGPT", url: "https://chat.openai.com/" },
-            { name: "Google Bard", url: "https://bard.google.com/" },
-            { name: "Midjourney", url: "https://www.midjourney.com/" },
-            { name: "DALL-E", url: "https://openai.com/dall-e-2" },
-            { name: "Hugging Face", url: "https://huggingface.co/" }
+            { description: "An AI-powered chatbot that can engage in human-like conversations and assist with various tasks.", url: "https://chat.openai.com/" },
+            { description: "A conversational AI service that can help with creative tasks, answer questions, and provide explanations.", url: "https://bard.google.com/" },
+            { description: "An AI art generator that creates stunning images from text descriptions.", url: "https://www.midjourney.com/" },
+            { description: "An AI system that can create realistic images and art from natural language descriptions.", url: "https://openai.com/dall-e-2" },
+            { description: "A platform for sharing and collaborating on machine learning models, with a focus on natural language processing.", url: "https://huggingface.co/" },
+            { description: "An open-source machine learning framework for building and deploying ML models.", url: "https://www.tensorflow.org/" },
+            { description: "An open-source machine learning library for applications such as computer vision and NLP.", url: "https://pytorch.org/" },
+            { description: "A platform for data science competitions, datasets, and community-driven learning in AI and machine learning.", url: "https://www.kaggle.com/" }
         ];
 
         function loadNewResource() {
             const randomResource = resources[Math.floor(Math.random() * resources.length)];
             const resourceElement = document.getElementById("resource");
-            resourceElement.innerHTML = `<a href="${randomResource.url}" target="_blank">${randomResource.name}</a>`;
+            resourceElement.innerHTML = `
+                <p>${randomResource.description}</p>
+                <a href="${randomResource.url}" target="_blank" class="resource-link">Explore this AI tool</a>
+            `;
         }
 
         // Load a resource when the page loads
