@@ -12,24 +12,25 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #ffffff;
         }
         .container {
             text-align: center;
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 20px;
+            line-height: 1.2;
         }
         .button {
             background-color: #b19cd9;
             border: none;
-            color: white;
+            color: black;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
+            font-size: 18px;
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 25px;
@@ -48,15 +49,7 @@
 
     <script>
         function goToRandomResource() {
-            const resources = [
-                'https://example.com/resource1',
-                'https://example.com/resource2',
-                'https://example.com/resource3',
-                'https://example.com/resource4',
-                'https://example.com/resource5'
-            ];
-            const randomResource = resources[Math.floor(Math.random() * resources.length)];
-            window.location.href = randomResource;
+            window.location.href = 'resource.html';
         }
     </script>
 </body>
