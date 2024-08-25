@@ -51,6 +51,7 @@
         <h1>AI Resource</h1>
         <div id="resource" class="resource"></div>
         <button class="button" onclick="loadNewResource()">Explore More</button>
+    <button class="button" onclick="goToHomepage()" style="margin-top: 20px;">Back to Homepage</button>
     </div>
 
     <script>
@@ -65,6 +66,23 @@
         function loadNewResource() {
             const randomResource = resources[Math.floor(Math.random() * resources.length)];
             const resourceElement = document.getElementById("resource");
+
+            <script>
+    const resources = [
+        // ... your list of resources ...
+    ];
+
+    function loadNewResource() {
+        // ... existing function code ...
+    }
+
+    function goToHomepage() {
+        window.location.href = 'index.html';
+    }
+
+    // Load a resource when the page loads
+    window.onload = loadNewResource;
+</script>
             resourceElement.innerHTML = `<a href="${randomResource.url}" target="_blank">${randomResource.name}</a>`;
         }
 
