@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Resource</title>
+    <title>Explore The WhoWhatWhy in the world of AI</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,15 +16,13 @@
         }
         .container {
             text-align: center;
-            max-width: 600px;
-            padding: 20px;
         }
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 20px;
         }
         .resource {
-            font-size: 1.2em;
+            font-size: 1.5em;
             margin-bottom: 30px;
         }
         .button {
@@ -48,10 +46,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>AI Resource</h1>
+        <h1>Explore The WhoWhatWhy<br>in the world of AI</h1>
         <div id="resource" class="resource"></div>
         <button class="button" onclick="loadNewResource()">Explore More</button>
-    <button class="button" onclick="goToHomepage()" style="margin-top: 20px;">Back to Homepage</button>
+        <button class="button" onclick="goToHomepage()" style="margin-top: 20px;">Back to Homepage</button>
     </div>
 
     <script>
@@ -66,24 +64,11 @@
         function loadNewResource() {
             const randomResource = resources[Math.floor(Math.random() * resources.length)];
             const resourceElement = document.getElementById("resource");
-
-            <script>
-    const resources = [
-        // ... your list of resources ...
-    ];
-
-    function loadNewResource() {
-        // ... existing function code ...
-    }
-
-    function goToHomepage() {
-        window.location.href = 'index.html';
-    }
-
-    // Load a resource when the page loads
-    window.onload = loadNewResource;
-</script>
             resourceElement.innerHTML = `<a href="${randomResource.url}" target="_blank">${randomResource.name}</a>`;
+        }
+
+        function goToHomepage() {
+            window.location.href = 'index.html';
         }
 
         // Load a resource when the page loads
