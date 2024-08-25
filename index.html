@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhoWhatWhyAI - Explore the World of AI</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhoWhatWhyAI - Explore the World of AI</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+  <style>
+    .button {
+      display: block;  /* Make the button a block level element */
+      margin: 0 auto;  /* Center the button horizontally */
+      padding: 1rem 2rem; /* Increase button padding for larger text */
+      font-size: 1.25rem;  /* Increase button text size */
+      background-color: #007bff;  /* Change button color (optional) */
+      color: white;  /* Change button text color (optional) */
+      border: none;  /* Remove default button border */
+      border-radius: 0.5rem;  /* Add rounded corners */
+      cursor: pointer;  /* Show pointer on hover */
+      transition: all 0.3s ease;  /* Add smooth hover effect (optional) */
+    }
+    .button:hover {
+      background-color: #0062cc;  /* Change hover background color (optional) */
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans min-h-screen flex items-center justify-center">
-    <div class="text-center">
-        <h1 class="text-4xl font-bold mb-6">WhoWhatWhyAI</h1>
-        <p class="text-xl mb-8">Ready to explore the WhoWhatWhy in the world of AI?</p>
-        <a href="explore.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300 inline-block">
-            Start Exploring
-        </a>
-    </div>
+<body class="bg-gray-100 text-gray-900 font-sans min-h-screen">
+  <div class="text-center">
+    <h1 class="text-5xl font-bold mb-8">WhoWhatWhyAI</h1>
+    <p class="text-2xl mb-12">Ready to explore the WhoWhatWhy in the world of AI?</p>
+    <a href="explore.html" class="button">Start Exploring</a>
+  </div>
 </body>
 </html>
