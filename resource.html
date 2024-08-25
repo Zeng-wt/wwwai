@@ -38,6 +38,14 @@
             color: #333;
         }
         .resource-link {
+            color: #b19cd9;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .resource-link:hover {
+            color: #9a7ecc;
+        }
+        .button {
             background-color: #b19cd9;
             border: none;
             color: white;
@@ -51,7 +59,7 @@
             border-radius: 50px;
             transition: background-color 0.3s;
         }
-        .resource-link:hover {
+        .button:hover {
             background-color: #9a7ecc;
         }
         .footer {
@@ -75,6 +83,7 @@
     <div class="container">
         <h1>Explore the<br>WhoWhatWhy<br>in the world of AI</h1>
         <div id="resource" class="resource"></div>
+        <button onclick="loadNewResource()" class="button">Explore More</button>
     </div>
     <div class="footer">
         <a href="index.html" class="home-link">Back to Homepage</a>
@@ -89,7 +98,8 @@
             { description: "A platform for sharing and collaborating on machine learning models, with a focus on natural language processing.", url: "https://huggingface.co/" },
             { description: "An open-source machine learning framework for building and deploying ML models.", url: "https://www.tensorflow.org/" },
             { description: "An open-source machine learning library for applications such as computer vision and NLP.", url: "https://pytorch.org/" },
-            { description: "A platform for data science competitions, datasets, and community-driven learning in AI and machine learning.", url: "https://www.kaggle.com/" }
+            { description: "A platform for data science competitions, datasets, and community-driven learning in AI and machine learning.", url: "https://www.kaggle.com/" },
+            // Add more resources here...
         ];
 
         function loadNewResource() {
@@ -97,7 +107,7 @@
             const resourceElement = document.getElementById("resource");
             resourceElement.innerHTML = `
                 <p>${randomResource.description}</p>
-                <a href="${randomResource.url}" target="_blank" class="resource-link">Explore this AI tool</a>
+                <a href="${randomResource.url}" target="_blank" class="resource-link">Click here to explore this AI tool</a>
             `;
         }
 
