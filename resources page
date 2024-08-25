@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhoWhatWhyAI - AI Resource</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="max-w-2xl w-full">
+        <h1 class="text-4xl font-bold mb-6 text-center">WhoWhatWhyAI</h1>
+        <div id="resource" class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 id="resourceTitle" class="text-2xl font-semibold mb-2">Loading...</h2>
+            <p id="resourceDescription" class="mb-4">Discovering AI wonders...</p>
+            <a id="resourceLink" href="#" target="_blank" class="text-blue-600 hover:underline">Learn more</a>
+        </div>
+        <div class="flex justify-between">
+            <a href="index.html" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+                Back to Home
+            </a>
+            <button id="nextButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                Next AI Resource
+            </button>
+        </div>
+    </div>
+
+    <script src="resources.js"></script>
+    <script>
+        function getResourceId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return parseInt(urlParams.get('id')) || 0;
+        }
+
+        function updateResource(id) {
+            const resource = resources[id];
+            document.title = `WhoWhatWhyAI - ${resource.title}`;
+            document.getElementById('resourceTitle').textContent = resource.title;
+            document.getElementById('resourceDescription').textContent = resource.description;
+            document.getElementById('resourceLink').href = resource.link;
+        }
+
+        let currentId = getResourceId();
+        updateResource(currentId);
+
+        document.getElementById('nextButton').addEventListener('click', () => {
+            currentId = (currentId + 1) % resources.length;
+            history.pushState(null, '', `resource.html?id=${currentId}`);
+            updateResource(currentId);
+        });
+    </script>
+</body>
+</html>
